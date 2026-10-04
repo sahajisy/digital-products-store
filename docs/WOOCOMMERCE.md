@@ -1,9 +1,9 @@
 # WooCommerce + AliNext dropshipping on wabisabivibe.store
 
-This is the live path for the Nagomi store (physical goods, sourced from AliExpress, shipped to India). The static `site/` and workflows 01 and 03 (Stripe Payment Links, instant downloads) are an alternative for digital products and are **not needed** here.
+This is the live path for the Nagomi store (physical goods, sourced from AliExpress, shipped to Italy first; India later with a separate Indian supplier, because AliExpress does not deliver there). The static `site/` and workflows 01 and 03 (Stripe Payment Links, instant downloads) are an alternative for digital products and are **not needed** here.
 
 ```
-Customer ─ WooCommerce checkout (Stripe / COD) ─▶ order status "processing"
+Customer ─ WooCommerce checkout (card / PayPal) ─▶ order status "processing"
                                                      │
                        WooCommerce webhook ──────────▶ 05 WooCommerce Dropship Orders (n8n)
                                                      │   dedupe by order id → Telegram "fulfil this" → log in Orders sheet
@@ -20,9 +20,9 @@ Keep **one** importer. Recommended: AliNext. Deactivate and delete the others (S
 
 ## 2. WooCommerce settings
 WooCommerce → Settings:
-- **General**: country India, currency INR (₹), enable taxes if you are GST registered.
-- **Payments**: Stripe (connect your account; test mode first), Cash on delivery only if you will honour it (with AliExpress sourcing, COD means you pay the supplier before you are paid. Many dropshippers skip it or cap it).
-- **Shipping**: zone India, a flat or free rate that covers your real AliExpress shipping cost.
+- **General**: store address in India, selling to **Italy** only for now (Selling location), currency **EUR (€)**. Tax: Italian VAT is 22%; with a non-EU business, check with an accountant how VAT/IOSS and import duties apply before you set tax rates.
+- **Payments**: a card gateway (and PayPal if you like) that can take euros for an Indian business. Check eligibility for Stripe, PayPal or Razorpay international payments before committing; start in test mode. No cash on delivery.
+- **Shipping**: zone **Italy**, a flat or free rate that covers your real AliExpress shipping cost. Add other EU countries later as separate zones.
 - **Accounts & Privacy**: allow guest checkout.
 
 ## 3. AliNext
@@ -42,9 +42,11 @@ Import `n8n/workflows/05-woocommerce-dropship-orders.json` and `04-error-alert.j
 6. Workflow 02 (chat): set the Anthropic credential, activate, and add the production webhook URL to `site/config.js` if you embed the widget. The agent reads the catalog from `https://wabisabivibe.store/wp-json/wc/store/v1/products`.
 
 ## 5. Before you go live
-- [ ] Fill every `[PLACEHOLDER]` on Home, About, Shipping, Returns, Terms, Privacy (support email, city, dates, COD cap, return window). Policies must match what you really do; have them reviewed.
+- [ ] Fill every `[PLACEHOLDER]` on Home, About, Shipping, Returns, Terms, Privacy (city, business name and address, dates, delivery times, shipping rate, VAT wording, governing law). Policies must match what you really do; have them reviewed.
 - [ ] Home "Shop the collection" buttons link to `/shop/` (they are `#` now) and the placeholder "PRODUCT PHOTO" cards are replaced by real products.
-- [ ] Stripe in live mode, a real test purchase and a refund tested.
+- [ ] Payment gateway in live mode, a real test purchase and a refund tested.
+- [ ] EU/Italy checks with an accountant or lawyer: VAT/IOSS and duties on imports, the 14-day right of withdrawal and the legal guarantee of conformity, GDPR (cookie consent banner, data transfers to India), the EU General Product Safety Regulation (a responsible person in the EU for products you sell), and whether to offer Italian-language pages.
+- [ ] Brand copy matches reality: the site says "we film the makers" and "small batches", which is not true for AliExpress items. Rewrite or remove those claims before launch.
 - [ ] Alert for a failed workflow tested (break the Telegram credential once).
 - [ ] You can legally sell each product and have checked AliExpress images are free to use.
 

@@ -1,6 +1,6 @@
 # wordpress/: backup of the live site content
 
-Snapshot of the Elementor pages and theme templates on **wabisabivibe.store**, taken 2026-10-04. These files are a backup and a diff-able record; the live site in WordPress remains the source of truth.
+Snapshot (taken before the switch from India to Italy/EU wording, so it is out of date; ask Claude to re-export) of the Elementor pages and theme templates on **wabisabivibe.store**, taken 2026-10-04. These files are a backup and a diff-able record; the live site in WordPress remains the source of truth.
 
 | File | Live page / template |
 |---|---|
