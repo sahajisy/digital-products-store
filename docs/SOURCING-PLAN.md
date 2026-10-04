@@ -2,6 +2,8 @@
 
 Source: your research notes (Oct 2026), reconciled with the store as built. The supplier facts below come from those notes and have **not** been independently checked; verify each one before you spend money.
 
+> **Update 2026-10-04:** ZenPop Japan replied that it **closed all operations on 30 June 2026**, so it is not a supplier. The Japan-wholesale half of the plan needs a new partner (see "Replacing ZenPop"). The CJdropshipping half is unaffected.
+
 ## What the plan says, in short
 - Hybrid model: (1) original-design kawaii items dropshipped through **CJdropshipping**, (2) authentic Japanese stationery bought from a **Japan-based wholesaler** and held as small stock.
 - Italy first (CJ has an EU warehouse). India and South Asia only after a sample parcel has been delivered and customs are understood.
@@ -27,7 +29,7 @@ Source: your research notes (Oct 2026), reconciled with the store as built. The 
 1. [ ] Create a CJdropshipping account, connect it to the store, and confirm the WooCommerce connection works with your plugin set.
 2. [ ] Filter by the **Italy / EU warehouse**, shortlist 10 to 15 original-design items, and check the shipping quote for each product.
 3. [ ] Order 2 to 3 samples to an Italian address (or a contact there); record delivery time, quality, packaging, tracking and any customs charge.
-4. [ ] Email ZenPop Japan and ask the questions below. Create buyer accounts on NETSEA and Super Delivery as backups.
+4. [x] ~~Email ZenPop Japan~~: closed (see above). [ ] Pick a replacement Japan supplier (see "Replacing ZenPop") and send it the questions below.
 5. [ ] Order 2 to 3 sample items from each Japanese supplier.
 6. [ ] Price every item with the formula in `STORE-BUILD.md`, including shipping, duty/VAT, payment fees, ads and returns.
 7. [ ] Import 15 to 30 products (the plan's launch size; `STORE-BUILD.md` suggests 30 to 50, so treat 15 as the minimum), rewrite titles and descriptions, add the real origin, and pass each through The Wabi Sabi Standard (`/standards/`).
@@ -35,7 +37,15 @@ Source: your research notes (Oct 2026), reconciled with the store as built. The 
 9. [ ] Launch to Italy, run a small TikTok/Instagram Reels budget, track what sells, reorder winners.
 10. [ ] Add India or South Asia only after a sample has been delivered there.
 
-## Questions for ZenPop Japan (`partner@zenpop.jp`)
+## Replacing ZenPop
+Candidates come from your own notes and are **unchecked**; confirm each is open and accepts a buyer in India or the EU before relying on it:
+- **NETSEA and Super Delivery**: Japanese wholesale marketplaces, mostly bulk and Japanese-language; check whether they accept overseas buyers and ship abroad.
+- **Orosy** (see the wholesale-portal guide in the sources) and **Faire**: wholesale marketplaces where Japanese stationery brands list; check each brand's minimum order and international shipping.
+- Any brand you like directly: many small Japanese stationery makers take wholesale enquiries by email.
+Until one of these works out, launch with the CJdropshipping items only and **do not use the Japan category** (it stays empty; keep it hidden from the menu and home page if you prefer an honest, uncluttered launch).
+
+## Questions for a Japanese wholesale supplier
+The email below was written for ZenPop. It works for any supplier once you change the greeting and the company name.
 Draft, edit before sending:
 
 > Hello, I run a small online store (wabisabivibes, operated by InnerVerge Media) selling Japanese stationery and lifestyle items to customers in Italy. Before ordering, could you tell me:
@@ -52,11 +62,11 @@ Draft, edit before sending:
 ### Japanese version (same six questions)
 件名: 卸売取引および小口配送のお問い合わせ(イタリア向け)
 
-> ZenPop Japan ご担当者様
+> [会社名] ご担当者様
 >
 > はじめまして。インドのInnerVerge Mediaが運営するオンラインストア「wabisabivibes」(wabisabivibe.store)の[お名前]と申します。日本の文具・ライフスタイル雑貨を、イタリアのお客様に販売する準備をしております。
 >
-> 貴社の卸売サービスについて、以下の点をご教示いただけますでしょうか。
+> 貴社の卸売取引について、以下の点をご教示いただけますでしょうか。
 >
 > 1. 最低注文数量(ロット)
 > 2. 卸売価格(価格表やカタログがございましたらご共有ください)
@@ -74,7 +84,7 @@ Draft, edit before sending:
 
 ## Open questions (from the notes, plus ours)
 - Which payment gateway can take euros for an Indian business? (Stripe, PayPal, Razorpay and others each have eligibility rules; check before committing.)
-- Does ZenPop Japan accept small or single-item orders?
+- Which replacement Japan supplier accepts small orders and ships to Italy (or to you in India)?
 - Which CJ products are really stocked in the Italy/EU warehouse?
 - Do CJ's WooCommerce plugin and the existing plugin set (AliNext, WooCommerce Stripe Gateway, Advanced Shipment Tracking) work together without conflicts? A Razorpay plugin already clashed with AliNext's SDK once, so install CJ on its own and test.
 
