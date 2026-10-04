@@ -1,0 +1,16 @@
+{
+  "template_id": 48,
+  "title": "Nagomi Footer",
+  "type": "footer",
+  "conditions": {
+    "include": [
+      {
+        "object": "entire-site"
+      }
+    ],
+    "exclude": [],
+    "priority": 0
+  },
+  "builder": "classic",
+  "content": "<p><strong>wabisabivibe</strong></p><p>A calm, harmonious feeling. Also a small shop in [YOUR CITY].</p><p>GSTIN [YOUR GSTIN]</p><p><strong>SHOP</strong></p><p><a href=\"/the-makers/\">The Makers</a><br><a href=\"/about/\">About</a><br><a href=\"/contact/\">Contact</a></p><p><strong>HELP</strong></p><p><a href=\"/shipping-delivery/\">Shipping &amp; Delivery</a><br><a href=\"/returns-refunds/\">Returns &amp; Refunds</a><br><a href=\"/privacy-policy/\">Privacy Policy</a><br><a href=\"/terms-conditions/\">Terms &amp; Conditions</a></p>"
+}
