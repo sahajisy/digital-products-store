@@ -19,6 +19,6 @@ A static storefront plus an n8n automation "agent" that runs a digital-products 
 npm run dev        # serve the site at http://localhost:3000
 npm run validate   # check workflow JSON + catalog safety (also runs in CI)
 ```
-Live store (WooCommerce + AliNext, wabisabivibe.store): follow [docs/WOOCOMMERCE.md](docs/WOOCOMMERCE.md). Static digital-download variant: follow [docs/SETUP.md](docs/SETUP.md). Workflows import with placeholder credentials/IDs that you must fill in inside n8n.
+Live store (WooCommerce, wabisabivibe.store): site build status and checklist in [docs/STORE-BUILD.md](docs/STORE-BUILD.md), setup and automation in [docs/WOOCOMMERCE.md](docs/WOOCOMMERCE.md). Static digital-download variant: follow [docs/SETUP.md](docs/SETUP.md). Workflows import with placeholder credentials/IDs that you must fill in inside n8n.
 
 **Only sell products you have the rights to resell.** The policies page is template text; get it reviewed before launch.
