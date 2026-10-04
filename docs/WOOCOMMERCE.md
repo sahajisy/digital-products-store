@@ -39,7 +39,7 @@ Import `n8n/workflows/05-woocommerce-dropship-orders.json` and `04-error-alert.j
 2. Replace `REPLACE_WITH_SHEET_ID` and `REPLACE_WITH_TELEGRAM_CHAT_ID`. Use the `Orders` tab from `n8n/sheets/Orders.csv`. Workflow 05 stores `woo-<order id>` in the `session_id` column.
 3. Set workflow 05's *Error workflow* to *04 - Error Alert*, then activate both. n8n registers the webhook in WooCommerce when you activate.
 4. Place a test order. You should get one Telegram alert and one Orders row; editing the same order again must **not** alert twice.
-5. Workflow 02 (chat): set the Anthropic credential and `support@example.com` to your real address, activate, and add the production webhook URL to `site/config.js` if you embed the widget. The agent reads the catalog from `https://wabisabivibe.store/wp-json/wc/store/v1/products`.
+5. Workflow 02 (chat): set the Anthropic credential and `support@wabisabivibe.store` to your real address, activate, and add the production webhook URL to `site/config.js` if you embed the widget. The agent reads the catalog from `https://wabisabivibe.store/wp-json/wc/store/v1/products`.
 
 ## 5. Before you go live
 - [ ] Fill every `[PLACEHOLDER]` on Home, About, Shipping, Returns, Terms, Privacy (support email, city, dates, COD cap, return window). Policies must match what you really do; have them reviewed.
