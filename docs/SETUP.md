@@ -36,7 +36,8 @@ Use n8n Cloud or self-host with HTTPS (webhooks must be publicly reachable).
 3. **01 Order Fulfillment**: open the *Stripe Checkout Completed* node and copy its webhook URL; n8n registers it in Stripe when you activate. Send a test purchase and confirm the email, the Orders row and the Telegram message arrive, and that a **second** delivery of the same event does nothing (idempotency by `session_id`).
 4. **03 Catalog Sync**: click *Run Manually*. Check that `site/products.json` is committed and descriptions were filled in the sheet.
 5. **02 AI Sales Agent**: activate, copy the **production** webhook URL, and paste it into `site/config.js` as `chatWebhookUrl`. Set `allowedOrigins` on the webhook node to your site's origin.
-6. Activate all three workflows.
+6. **04 Error Alert**: import it, set the Telegram credential/chat id and activate it. Then open workflow **01** → Settings → *Error workflow* → pick *04 - Error Alert* (do the same for 02 and 03). Without this, a failed delivery email is silent.
+7. Activate all four workflows.
 
 ## 4. Website
 1. Push this repo to GitHub.
@@ -50,8 +51,10 @@ Use n8n Cloud or self-host with HTTPS (webhooks must be publicly reachable).
 - [ ] Re-run workflow 03
 - [ ] Policies page reviewed; supplier licences confirmed
 - [ ] Telegram alert for unmapped payments tested (put a wrong `plink_` id on purpose)
+- [ ] Error workflow tested (break the SMTP credential, buy once, confirm the 🚨 alert)
 
 ## Troubleshooting
+- **"Checkout event skipped" alert**: the event was unpaid (delayed payment method; it is fulfilled automatically when `checkout.session.async_payment_succeeded` arrives), or had no customer email / no payment link (e.g. a one-off Checkout Session, not a Payment Link).
 - **Paid but no email**: Telegram "NOT FULFILLED" alert means the `plink_` id in the sheet doesn't match the payment. Fix the row and fulfil manually.
 - **Chat says unavailable**: check `chatWebhookUrl`, that workflow 02 is active, and `allowedOrigins`.
 - **Workflow 03 commit errors**: the GitHub token needs Contents write on this repo and the `main` branch name must match the node.

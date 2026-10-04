@@ -19,7 +19,7 @@
 ## Design decisions
 - **Sheet is the single source of truth.** The public `products.json` is generated from it and never contains `supplier_download_url`; `scripts/validate.mjs` fails CI if that leaks.
 - **Idempotent fulfilment.** Stripe may redeliver events; orders are keyed by Checkout `session_id` and skipped if already logged.
-- **Fail loudly.** A paid order that can't be fulfilled alerts the owner instead of silently dropping.
+- **Fail loudly.** A paid order that can't be fulfilled alerts the owner instead of silently dropping: unmapped products and skipped events alert from workflow 01, and any node failure (e.g. SMTP down) alerts via workflow 04.
 - **The agent is read-only.** It can read the public catalog and talk; it cannot issue refunds, change prices or see orders. Refunds go to a human.
 - **No secrets in the repo or site.** All keys live in n8n credentials; `config.js` is public.
 
