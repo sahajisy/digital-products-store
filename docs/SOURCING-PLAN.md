@@ -49,6 +49,29 @@ Draft, edit before sending:
 > Thank you,
 > [YOUR NAME]
 
+### Japanese version (same six questions)
+件名: 卸売取引および小口配送のお問い合わせ(イタリア向け)
+
+> ZenPop Japan ご担当者様
+>
+> はじめまして。インドのInnerVerge Mediaが運営するオンラインストア「wabisabivibes」(wabisabivibe.store)の[お名前]と申します。日本の文具・ライフスタイル雑貨を、イタリアのお客様に販売する準備をしております。
+>
+> 貴社の卸売サービスについて、以下の点をご教示いただけますでしょうか。
+>
+> 1. 最低注文数量(ロット)
+> 2. 卸売価格(価格表やカタログがございましたらご共有ください)
+> 3. お客様宛ての個別直送(1点からの発送)は可能でしょうか。それとも、まとめて当方宛てのみの発送となりますか。
+> 4. イタリアおよびインドへの送料と配送日数
+> 5. 梱包方法とインボイスの対応(通関用の商業インボイスを含む)
+> 6. キャラクターやブランドを使用した商品は、正規ライセンス品でしょうか。
+>
+> まずは少量のサンプル注文から始めたいと考えております。お忙しいところ恐れ入りますが、ご返信をお待ちしております。何卒よろしくお願いいたします。
+>
+> [お名前]
+> InnerVerge Media / wabisabivibes
+> support@wabisabivibe.store
+> https://wabisabivibe.store
+
 ## Open questions (from the notes, plus ours)
 - Which payment gateway can take euros for an Indian business? (Stripe, PayPal, Razorpay and others each have eligibility rules; check before committing.)
 - Does ZenPop Japan accept small or single-item orders?
