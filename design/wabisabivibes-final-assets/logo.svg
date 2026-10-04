@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 190">
+<rect width="760" height="190" fill="none"/>
+<g stroke="#2E2A26" stroke-width="6" stroke-linecap="round" stroke-linejoin="round">
+<ellipse cx="122" cy="116" rx="72" ry="54" fill="#FFF8EF"/>
+<path d="M70 79L58 42l32 20M166 76l21-34-4 45" fill="#FFF8EF"/>
+<circle cx="101" cy="104" r="4" fill="#2E2A26"/><circle cx="140" cy="104" r="4" fill="#2E2A26"/>
+<path d="M116 117q7 8 14 0M98 126q18 13 36 0" fill="none"/>
+<path d="M43 63c25-35 56-42 88-19M61 43c8-15 22-28 38-34M81 45L69 24M96 39L94 17M112 42l11-20" fill="none"/>
+</g>
+<g font-family="Arial,Helvetica,sans-serif" font-weight="900" letter-spacing="-2">
+<text x="218" y="104" font-size="70" fill="#2E2A26">wabisabi</text>
+<text x="515" y="104" font-size="70" fill="#D97964">vibes</text>
+</g>
+<text x="221" y="139" font-family="Arial,Helvetica,sans-serif" font-size="16" font-weight="700" letter-spacing="4.5" fill="#2E2A26">ASIAN FINDS FOR A CALMER YOU</text>
+</svg>

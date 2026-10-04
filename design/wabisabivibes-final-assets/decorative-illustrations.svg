@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1400 500">
+<rect width="1400" height="500" rx="35" fill="#FFFaf5"/>
+<g font-family="Arial" font-weight="900" fill="#2E2A26" text-anchor="middle">
+<text x="120" y="455" font-size="20">SAKURA</text>
+<text x="350" y="455" font-size="20">LEAF</text>
+<text x="580" y="455" font-size="20">TORII</text>
+<text x="810" y="455" font-size="20">MOUNTAIN</text>
+<text x="1040" y="455" font-size="20">CLOUD</text>
+<text x="1270" y="455" font-size="20">KAWAII CAT</text>
+</g>
+<g fill="#F7B8B8"><circle cx="120" cy="170" r="60"/><circle cx="120" cy="90" r="24"/><circle cx="200" cy="170" r="24"/><circle cx="120" cy="250" r="24"/><circle cx="40" cy="170" r="24"/></g>
+<g fill="#A7B89F" stroke="#2E2A26" stroke-width="7"><path d="M330 300q0-170 100-240M375 220l-60-60M390 175l70-70M350 270l-70-20"/></g>
+<g stroke="#D97964" stroke-width="20" fill="none"><path d="M510 330V180h140v150M495 180h170M535 180V130h90v50"/></g>
+<path d="M720 330L805 135l85 195z" fill="#A7C7D9" stroke="#2E2A26" stroke-width="7"/><path d="M805 135l-35 80 40-22 38 25z" fill="#fffaf5"/>
+<g fill="#fffaf5" stroke="#2E2A26" stroke-width="7"><path d="M940 270q0-55 55-55 30-55 85 0 55-15 55 55z"/></g>
+<g transform="translate(1190 140)"><ellipse cx="80" cy="170" rx="95" ry="70" fill="#FFF8EF" stroke="#2E2A26" stroke-width="8"/><path d="M20 120L5 65l55 35M140 120l35-55-5 70" fill="#FFF8EF" stroke="#2E2A26" stroke-width="8"/><circle cx="55" cy="155" r="5"/><circle cx="105" cy="155" r="5"/><path d="M68 180q12 10 24 0" fill="none"/></g>
+</svg>

@@ -1,0 +1,16 @@
+{
+  "template_id": 47,
+  "title": "Nagomi Header",
+  "type": "header",
+  "conditions": {
+    "include": [
+      {
+        "object": "entire-site"
+      }
+    ],
+    "exclude": [],
+    "priority": 0
+  },
+  "builder": "classic",
+  "content": "<p>Free shipping above [YOUR THRESHOLD] &nbsp;·&nbsp; Cash on delivery available</p>\t\t\t<a href=\"https://wabisabivibe.store/\">wabisabivibe</a>\t\t<p><a href=\"/the-makers/\">The Makers</a> &nbsp;&nbsp;&nbsp; <a href=\"/about/\">About</a> &nbsp;&nbsp;&nbsp; <a href=\"/contact/\">Contact</a></p>"
+}

@@ -2,7 +2,7 @@
   "name": "01 - Order Fulfillment",
   "nodes": [
     {
-      "parameters": { "events": ["checkout.session.completed"] },
+      "parameters": { "events": ["checkout.session.completed", "checkout.session.async_payment_succeeded"] },
       "id": "a1000000-0000-4000-8000-000000000001",
       "name": "Stripe Checkout Completed",
       "type": "n8n-nodes-base.stripeTrigger",
@@ -37,6 +37,12 @@
               "leftValue": "={{ $json.email }}",
               "rightValue": "",
               "operator": { "type": "string", "operation": "notEmpty", "singleValue": true }
+            },
+            {
+              "id": "c-plink",
+              "leftValue": "={{ $json.payment_link_id }}",
+              "rightValue": "",
+              "operator": { "type": "string", "operation": "notEmpty", "singleValue": true }
             }
           ],
           "combinator": "and"
@@ -44,7 +50,7 @@
         "options": {}
       },
       "id": "a1000000-0000-4000-8000-000000000003",
-      "name": "Paid With Email?",
+      "name": "Paid With Email And Link?",
       "type": "n8n-nodes-base.if",
       "typeVersion": 2,
       "position": [440, 300]
@@ -100,7 +106,7 @@
           "values": [
             {
               "lookupColumn": "stripe_payment_link_id",
-              "lookupValue": "={{ $('Normalize Order').item.json.payment_link_id }}"
+              "lookupValue": "={{ $('Normalize Order').first().json.payment_link_id }}"
             }
           ]
         },
@@ -179,12 +185,12 @@
         "columns": {
           "mappingMode": "defineBelow",
           "value": {
-            "session_id": "={{ $('Build Delivery Email').item.json.session_id }}",
+            "session_id": "={{ $('Build Delivery Email').first().json.session_id }}",
             "created_at": "={{ $now.toISO() }}",
-            "email": "={{ $('Build Delivery Email').item.json.to }}",
-            "sku": "={{ $('Build Delivery Email').item.json.sku }}",
-            "amount": "={{ $('Build Delivery Email').item.json.amount }}",
-            "currency": "={{ $('Build Delivery Email').item.json.currency }}",
+            "email": "={{ $('Build Delivery Email').first().json.to }}",
+            "sku": "={{ $('Build Delivery Email').first().json.sku }}",
+            "amount": "={{ $('Build Delivery Email').first().json.amount }}",
+            "currency": "={{ $('Build Delivery Email').first().json.currency }}",
             "status": "delivered"
           },
           "matchingColumns": [],
@@ -202,7 +208,7 @@
     {
       "parameters": {
         "chatId": "REPLACE_WITH_TELEGRAM_CHAT_ID",
-        "text": "=✅ Sale: {{ $('Build Delivery Email').item.json.title }} — {{ $('Build Delivery Email').item.json.amount }} {{ $('Build Delivery Email').item.json.currency }} to {{ $('Build Delivery Email').item.json.to }}",
+        "text": "=✅ Sale: {{ $('Build Delivery Email').first().json.title }} — {{ $('Build Delivery Email').first().json.amount }} {{ $('Build Delivery Email').first().json.currency }} to {{ $('Build Delivery Email').first().json.to }}",
         "additionalFields": { "appendAttribution": false }
       },
       "id": "a1000000-0000-4000-8000-000000000011",
@@ -216,7 +222,7 @@
     {
       "parameters": {
         "chatId": "REPLACE_WITH_TELEGRAM_CHAT_ID",
-        "text": "=⚠️ PAID ORDER NOT FULFILLED — no product mapped (or no supplier URL) for payment link {{ $('Normalize Order').item.json.payment_link_id }}. Customer: {{ $('Normalize Order').item.json.email }}, session {{ $('Normalize Order').item.json.session_id }}. Fulfil manually.",
+        "text": "=⚠️ PAID ORDER NOT FULFILLED — no product mapped (or no supplier URL) for payment link {{ $('Normalize Order').first().json.payment_link_id }}. Customer: {{ $('Normalize Order').first().json.email }}, session {{ $('Normalize Order').first().json.session_id }}. Fulfil manually.",
         "additionalFields": { "appendAttribution": false }
       },
       "id": "a1000000-0000-4000-8000-000000000012",
@@ -226,12 +232,26 @@
       "position": [1540, 220],
       "webhookId": "store-telegram-unmapped",
       "credentials": { "telegramApi": { "id": "REPLACE_ME", "name": "Telegram bot" } }
+    },
+    {
+      "parameters": {
+        "chatId": "REPLACE_WITH_TELEGRAM_CHAT_ID",
+        "text": "=ℹ️ Checkout event skipped (paid={{ $json.paid }}, email={{ $json.email || 'none' }}, payment link={{ $json.payment_link_id || 'none' }}). Session {{ $json.session_id }}. If this was a real paid order, fulfil manually; delayed-payment orders are delivered automatically once the payment clears.",
+        "additionalFields": { "appendAttribution": false }
+      },
+      "id": "a1000000-0000-4000-8000-000000000013",
+      "name": "Alert Owner - Skipped",
+      "type": "n8n-nodes-base.telegram",
+      "typeVersion": 1.2,
+      "position": [660, 420],
+      "webhookId": "store-telegram-skipped",
+      "credentials": { "telegramApi": { "id": "REPLACE_ME", "name": "Telegram bot" } }
     }
   ],
   "connections": {
     "Stripe Checkout Completed": { "main": [[{ "node": "Normalize Order", "type": "main", "index": 0 }]] },
-    "Normalize Order": { "main": [[{ "node": "Paid With Email?", "type": "main", "index": 0 }]] },
-    "Paid With Email?": { "main": [[{ "node": "Find Existing Order", "type": "main", "index": 0 }], []] },
+    "Normalize Order": { "main": [[{ "node": "Paid With Email And Link?", "type": "main", "index": 0 }]] },
+    "Paid With Email And Link?": { "main": [[{ "node": "Find Existing Order", "type": "main", "index": 0 }], [{ "node": "Alert Owner - Skipped", "type": "main", "index": 0 }]] },
     "Find Existing Order": { "main": [[{ "node": "Is New Order?", "type": "main", "index": 0 }]] },
     "Is New Order?": { "main": [[{ "node": "Lookup Product", "type": "main", "index": 0 }], []] },
     "Lookup Product": { "main": [[{ "node": "Product Mapped?", "type": "main", "index": 0 }]] },
