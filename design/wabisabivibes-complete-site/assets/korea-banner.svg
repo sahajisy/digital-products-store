@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 500">
+<rect width="1200" height="500" rx="38" fill="#E0EDF2"/>
+<circle cx="990" cy="120" r="95" fill="#A7C7D9" opacity=".35"/>
+<circle cx="1090" cy="330" r="130" fill="#A7C7D9" opacity=".18"/>
+<text x="70" y="270" font-family="Arial" font-size="100" font-weight="900" fill="#2E2A26">Korea</text>
+<text x="75" y="330" font-family="Arial" font-size="28" fill="#665B54">Thoughtful finds, little joys.</text>
+<text x="910" y="280" text-anchor="middle" font-size="150">♡</text>
+<g fill="#D97964"><circle cx="120" cy="90" r="12"/><circle cx="165" cy="65" r="8"/><circle cx="200" cy="105" r="11"/></g>
+</svg>

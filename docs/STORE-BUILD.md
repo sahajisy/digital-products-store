@@ -9,16 +9,18 @@ Brand: **WABI SABI VIBE** (wabisabivibe.store). Positioning: *Beautiful things f
 | Design system (live) | Elementor kit | From `design/wabisabivibes-prototype/`: Charcoal `#2E2A26`, Sakura Pink `#F7B8B8`, Cream `#F6E9DE`, Sage `#A7B89F`, Terracotta `#D97964` (brand) / `#C45B44` (buttons, so white text passes AA contrast), Soft Blush `#FDECEC`, Taupe `#C9B8A7`, Sky `#A7C7D9`, page white `#FFFAF5`. Font: Inter (900 display, 800 headings, 400 body). |
 | Product categories (live, empty) | `product_cat` | Japan, Korea, China, Taiwan, Southeast Asia (origin) + Home & Living, Beauty & Self-Care, Fashion & Accessories, Gifts, Desk & Stationery, Tea & Drinkware, Travel Accessories, Everyday Finds (type). Archives: `/product-category/<slug>/`. |
 | Home (wabisabivibes design) | 139 | Elementor build of the prototype: two hero cards, 6 collection tiles linking to real WooCommerce categories, product rows (WooCommerce shortcodes), story banner, trust cards, journal, newsletter. Artwork is the prototype's CSS/emoji placeholder until final illustrations are uploaded. The newsletter form is a disabled placeholder. Earlier draft 122 was deleted. |
-| Japan / Korea | 124 / 126 | Editorial intro + WooCommerce grid for that category. |
-| About (new) | 128 | Honest copy; has one `[personal note]` placeholder for you. |
-| The Wabi Sabi Standard | 130 (`/standards/`) | Customer-facing version of the product-selection framework. |
-| FAQ | 132 | Placeholders where only you know the answer. |
+| Japan / Korea | 144 / 147 | New-design collection pages: tinted hero card + WooCommerce grid for that category. |
+| About (new) | 150 | Zip wording + honest origin/how-we-work text; states "a brand by InnerVerge Media"; registered address and tax details still to add. |
+| The Wabi Sabi Standard | 153 (`/standards/`) | Customer-facing product-selection standard. |
+| FAQ | 156 (`/faq/`) | Collapsible questions in the new style; placeholders where only you know the answer. |
 | Journal articles (2) | posts 134, 135 | "Understanding wabi-sabi", "Japanese-inspired minimalism for small spaces". Journal index page: 138. |
 
 Not duplicated on purpose: cart, checkout, my account, shop, search, filters, coupons, shipping, tax and category archives are WooCommerce's own.
 
 ## Design source
-`design/wabisabivibes-prototype/` is your standalone HTML prototype (homepage, tokens, interactions). The brand is written **wabisabivibes** there and in the logo board, while the brief and domain use **Wabi Sabi Vibe / wabisabivibe.store**: pick one spelling for the logo, footer and copy. The prototype's sample products (and ₹ prices) are samples only. Its footer says "Operated by InnerVerge Media"; confirm that is the legal business name before it goes in the footer or legal pages. Other drafts (Japan, Korea, About, Standard, FAQ) still use the earlier ivory/serif styling and will be restyled to match.
+- `design/wabisabivibes-prototype/`: first homepage prototype.
+- `design/wabisabivibes-complete-site/`: the 24-page static prototype (home, shop, 6 collections, product, journal, about, contact, FAQ, policies, cart, checkout, account) with `ELEMENTOR-MAP.md`. It is a visual reference only. Cart, checkout and account are WooCommerce-native in the real site. Its sample products (and ₹ prices, and a "Best Seller" badge on demo items) must never be published. Its `assets/` are text/emoji placeholder SVGs, and `logo.svg`, `favicon.svg` and `hero.svg`, which the README lists, are **not in the zip**; the final logo and illustrations still need to be supplied.
+- **Decisions confirmed:** the brand is written **wabisabivibes** (one word, lowercase, "vibes" in terracotta); the legal business is **InnerVerge Media**; the domain stays wabisabivibe.store. Registered address, tax details and governing law still need your input.
 
 ## Not built: needs you (or a decision)
 1. **Theme.** The site runs Twenty Twenty-Five. A lightweight WooCommerce theme (Hello Elementor, Astra or Kadence) is better for the sticky header, product-page layout and speed. Install it, then tell me.
