@@ -6,9 +6,9 @@ Brand: **WABI SABI VIBE** (wabisabivibe.store). Positioning: *Beautiful things f
 
 | Item | WordPress ID | Notes |
 |---|---|---|
-| Design system (live) | Elementor kit | Soft Black `#1B1B1A`, Charcoal `#2E2E2C`, Warm Ivory `#F4EFE6`, Off-white `#FAF8F4`, Sage `#8C9A84`, Beige `#D8CDBA`, Terracotta `#A8573F` (darkened for text contrast), Muted Indigo `#3F4B6B`. Fonts: Cormorant Garamond (headings), Inter (UI/body). |
+| Design system (live) | Elementor kit | From `design/wabisabivibes-prototype/`: Charcoal `#2E2A26`, Sakura Pink `#F7B8B8`, Cream `#F6E9DE`, Sage `#A7B89F`, Terracotta `#D97964` (brand) / `#C45B44` (buttons, so white text passes AA contrast), Soft Blush `#FDECEC`, Taupe `#C9B8A7`, Sky `#A7C7D9`, page white `#FFFAF5`. Font: Inter (900 display, 800 headings, 400 body). |
 | Product categories (live, empty) | `product_cat` | Japan, Korea, China, Taiwan, Southeast Asia (origin) + Home & Living, Beauty & Self-Care, Fashion & Accessories, Gifts, Desk & Stationery, Tea & Drinkware, Travel Accessories, Everyday Finds (type). Archives: `/product-category/<slug>/`. |
-| Home (new design) | 122 | 13-section order from the brief. Product rows use WooCommerce shortcodes. Image areas are placeholders. |
+| Home (wabisabivibes design) | 139 | Elementor build of the prototype: two hero cards, 6 collection tiles linking to real WooCommerce categories, product rows (WooCommerce shortcodes), story banner, trust cards, journal, newsletter. Artwork is the prototype's CSS/emoji placeholder until final illustrations are uploaded. The newsletter form is a disabled placeholder. Earlier draft 122 was deleted. |
 | Japan / Korea | 124 / 126 | Editorial intro + WooCommerce grid for that category. |
 | About (new) | 128 | Honest copy; has one `[personal note]` placeholder for you. |
 | The Wabi Sabi Standard | 130 (`/standards/`) | Customer-facing version of the product-selection framework. |
@@ -16,6 +16,9 @@ Brand: **WABI SABI VIBE** (wabisabivibe.store). Positioning: *Beautiful things f
 | Journal articles (2) | posts 134, 135 | "Understanding wabi-sabi", "Japanese-inspired minimalism for small spaces". Journal index page: 138. |
 
 Not duplicated on purpose: cart, checkout, my account, shop, search, filters, coupons, shipping, tax and category archives are WooCommerce's own.
+
+## Design source
+`design/wabisabivibes-prototype/` is your standalone HTML prototype (homepage, tokens, interactions). The brand is written **wabisabivibes** there and in the logo board, while the brief and domain use **Wabi Sabi Vibe / wabisabivibe.store**: pick one spelling for the logo, footer and copy. The prototype's sample products (and ₹ prices) are samples only. Its footer says "Operated by InnerVerge Media"; confirm that is the legal business name before it goes in the footer or legal pages. Other drafts (Japan, Korea, About, Standard, FAQ) still use the earlier ivory/serif styling and will be restyled to match.
 
 ## Not built: needs you (or a decision)
 1. **Theme.** The site runs Twenty Twenty-Five. A lightweight WooCommerce theme (Hello Elementor, Astra or Kadence) is better for the sticky header, product-page layout and speed. Install it, then tell me.

@@ -1,0 +1,128 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>wabisabivibes — Asian finds for a calmer you</title>
+<meta name="description" content="Thoughtfully selected Asian lifestyle finds, gifts, home goods and stationery.">
+<style>
+:root{
+  --charcoal:#2e2a26;--pink:#f7b8b8;--cream:#f6e9de;--sage:#a7b89f;
+  --terracotta:#d97964;--soft:#fdecec;--taupe:#c9b8a7;--blue:#a7c7d9;
+  --white:#fffaf5;--border:#ead9cc;--shadow:0 12px 35px rgba(46,42,38,.10);
+  --radius:24px;--max:1240px;
+}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;color:var(--charcoal);background:var(--white);font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;line-height:1.55}
+a{text-decoration:none;color:inherit}button,input{font:inherit}
+.container{width:min(calc(100% - 32px),var(--max));margin:auto}
+.announcement{background:var(--charcoal);color:#fff;text-align:center;font-size:13px;padding:9px 16px}
+.header{position:sticky;top:0;z-index:20;background:rgba(255,250,245,.93);backdrop-filter:blur(14px);border-bottom:1px solid var(--border)}
+.nav{height:76px;display:flex;align-items:center;justify-content:space-between;gap:24px}
+.logo{font-weight:900;font-size:25px;letter-spacing:-1.5px}.logo span{color:var(--terracotta)}
+.navlinks{display:flex;gap:24px;font-size:14px}.navlinks a:hover{color:var(--terracotta)}
+.actions{display:flex;gap:10px}.icon-btn{border:0;background:transparent;width:40px;height:40px;border-radius:50%;cursor:pointer}.icon-btn:hover{background:var(--soft)}
+.hero{padding:28px 0}.hero-grid{display:grid;grid-template-columns:1.08fr .92fr;gap:18px}
+.hero-card{min-height:530px;border-radius:32px;overflow:hidden;position:relative;background:linear-gradient(135deg,#fdecec,#f6e9de)}
+.hero-copy{padding:58px;position:relative;z-index:2;max-width:560px}.eyebrow{text-transform:uppercase;letter-spacing:2px;font-size:12px;font-weight:800;color:#76675d}
+h1{font-size:clamp(44px,6vw,76px);line-height:.98;letter-spacing:-3px;margin:14px 0 20px}
+.hero-copy p{font-size:17px;max-width:510px}.btn{display:inline-flex;align-items:center;gap:8px;border:0;border-radius:999px;padding:13px 20px;background:var(--terracotta);color:white;font-weight:800;cursor:pointer;box-shadow:0 7px 18px rgba(217,121,100,.25)}.btn.secondary{background:white;color:var(--charcoal);margin-left:8px}
+.hero-art{position:absolute;inset:0;overflow:hidden}.sun{position:absolute;width:80px;height:80px;border-radius:50%;background:#f3a28d;right:23%;top:17%}.mountain{position:absolute;right:-4%;bottom:0;width:66%;height:62%;background:linear-gradient(145deg,#a7b89f,#6f8068);clip-path:polygon(0 100%,45% 18%,64% 50%,80% 30%,100% 100%)}.cat{position:absolute;right:5%;bottom:20px;width:310px;height:190px;background:#fff8ef;border:7px solid #4a4039;border-radius:55% 45% 45% 55%;transform:rotate(-3deg);box-shadow:var(--shadow)}.cat:before,.cat:after{content:"";position:absolute;top:-35px;width:65px;height:65px;background:#fff8ef;border:7px solid #4a4039}.cat:before{left:32px;transform:rotate(25deg);clip-path:polygon(0 0,100% 0,70% 100%)}.cat:after{right:32px;transform:rotate(-25deg);clip-path:polygon(0 0,100% 0,30% 100%)}.face{position:absolute;left:98px;top:63px;font-size:30px;letter-spacing:15px}.blossom{position:absolute;color:#e99a96;font-size:40px}.b1{left:6%;top:8%}.b2{left:18%;top:21%}.b3{right:10%;top:9%}
+.side-card{border-radius:32px;background:#e7efdf;min-height:530px;padding:42px;position:relative;overflow:hidden;display:flex;flex-direction:column;justify-content:flex-end}.side-card h2{font-size:48px;line-height:1;margin:0 0 12px;letter-spacing:-2px}.girl{position:absolute;right:0;top:0;font-size:190px;opacity:.9}
+.section{padding:55px 0}.section-head{display:flex;align-items:end;justify-content:space-between;margin-bottom:22px}.section h2{font-size:36px;letter-spacing:-1.5px;margin:0}.muted{color:#746960}.collections{display:grid;grid-template-columns:repeat(6,1fr);gap:12px}.collection{min-height:190px;border-radius:22px;position:relative;overflow:hidden;padding:18px;display:flex;align-items:end;background:var(--cream);font-weight:900}.collection:nth-child(2){background:#fde2e4}.collection:nth-child(3){background:#e4eadf}.collection:nth-child(4){background:#f6dcd2}.collection:nth-child(5){background:#e7dfd2}.collection:nth-child(6){background:#e0edf2}.collection .illus{position:absolute;right:12px;top:10px;font-size:62px}.collection span{position:relative;z-index:1}
+.products{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}.product{background:white;border:1px solid var(--border);border-radius:22px;overflow:hidden;position:relative;transition:.2s}.product:hover{transform:translateY(-3px);box-shadow:var(--shadow)}.product-img{height:245px;background:linear-gradient(135deg,#f8e8dc,#e6efdf);display:grid;place-items:center;font-size:105px}.product-body{padding:17px}.product h3{font-size:16px;margin:0 0 5px}.price{font-weight:900}.badge{position:absolute;top:12px;left:12px;background:white;border-radius:999px;padding:6px 10px;font-size:11px;font-weight:900}.heart{position:absolute;top:10px;right:10px;border:0;background:white;border-radius:50%;width:36px;height:36px}
+.story{background:linear-gradient(100deg,#f8dfe0,#f7eee7);border-radius:30px;padding:45px;display:flex;justify-content:space-between;align-items:center;gap:30px;overflow:hidden}.story h2{font-size:45px;line-height:1;margin:0 0 12px}.teapot{font-size:150px}
+.trust{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}.trust-card{background:white;border:1px solid var(--border);border-radius:22px;padding:25px;text-align:center}.trust-card .ico{font-size:34px}
+.newsletter{background:var(--sage);border-radius:30px;padding:40px;display:flex;align-items:center;justify-content:space-between;gap:25px}.newsletter h2{margin:0;font-size:36px}.newsletter-form{display:flex;background:white;border-radius:999px;padding:5px;max-width:470px;width:100%}.newsletter-form input{border:0;outline:0;background:transparent;padding:12px 15px;min-width:0;flex:1}.newsletter-form button{border:0;background:var(--terracotta);color:white;border-radius:999px;padding:12px 18px;font-weight:800}
+.footer{margin-top:60px;background:var(--charcoal);color:#fff1e9;padding:55px 0}.footer-grid{display:grid;grid-template-columns:2fr repeat(3,1fr);gap:35px}.footer h3{font-size:14px;text-transform:uppercase;letter-spacing:1.5px}.footer a{display:block;color:#dbcac0;margin:8px 0;font-size:14px}.footer .brand{font-size:28px;font-weight:900}.copyright{border-top:1px solid #514a45;margin-top:35px;padding-top:20px;color:#bcaea7;font-size:13px}
+.mobile-menu{display:none}
+@media(max-width:900px){.navlinks{display:none}.hero-grid{grid-template-columns:1fr}.collections{grid-template-columns:repeat(3,1fr)}.products{grid-template-columns:repeat(2,1fr)}.trust{grid-template-columns:repeat(2,1fr)}.footer-grid{grid-template-columns:1fr 1fr}.mobile-menu{display:block}.hero-card,.side-card{min-height:470px}}
+@media(max-width:600px){.nav{height:64px}.logo{font-size:21px}.hero-copy{padding:35px 25px}h1{font-size:48px}.hero-card{min-height:590px}.cat{width:260px;right:-15px}.side-card h2{font-size:38px}.collections{grid-template-columns:repeat(2,1fr)}.collection{min-height:150px}.products{grid-template-columns:1fr 1fr;gap:10px}.product-img{height:180px;font-size:72px}.product-body{padding:12px}.trust{grid-template-columns:1fr 1fr}.story{padding:30px;display:block}.story h2{font-size:35px}.teapot{display:none}.newsletter{display:block}.newsletter-form{margin-top:20px}.footer-grid{grid-template-columns:1fr 1fr}.footer-grid>div:first-child{grid-column:1/-1}}
+</style>
+</head>
+<body>
+<div class="announcement">🌸 Thoughtfully selected Asian finds • Simple things, happier days</div>
+<header class="header">
+  <nav class="nav container">
+    <button class="icon-btn mobile-menu" aria-label="Open menu">☰</button>
+    <a class="logo" href="#">wabisabi<span>vibes</span></a>
+    <div class="navlinks">
+      <a href="#shop">Shop</a><a href="#japan">Japan</a><a href="#korea">Korea</a><a href="#home">Home & Living</a><a href="#beauty">Beauty</a><a href="#gifts">Gifts</a><a href="#journal">Journal</a>
+    </div>
+    <div class="actions"><button class="icon-btn" aria-label="Search">⌕</button><button class="icon-btn" aria-label="Account">♙</button><button class="icon-btn" aria-label="Wishlist">♡</button><button class="icon-btn" aria-label="Cart">🛒</button></div>
+  </nav>
+</header>
+
+<main>
+<section class="hero container">
+  <div class="hero-grid">
+    <article class="hero-card">
+      <div class="hero-copy">
+        <div class="eyebrow">Timeless Asian living</div>
+        <h1>Beautiful things from Asia, thoughtfully discovered.</h1>
+        <p>A curated collection of everyday objects, lifestyle pieces and gifts inspired by the diverse cultures and aesthetics of Asia.</p>
+        <a class="btn" href="#shop">Shop the collection →</a>
+      </div>
+      <div class="hero-art" aria-hidden="true">
+        <div class="sun"></div><div class="mountain"></div><div class="cat"><div class="face">•ᴗ•</div></div>
+        <div class="blossom b1">✿</div><div class="blossom b2">✿</div><div class="blossom b3">✿</div>
+      </div>
+    </article>
+    <article class="side-card">
+      <div class="girl">🌸<br>૮₍˶ᵔ ᵕ ᵔ˶₎ა</div>
+      <div><div class="eyebrow">A little joy, every day</div><h2>Small objects.<br>Brighter days.</h2><p>Find charming pieces for your home, desk and everyday rituals.</p><a class="btn" href="#japan">Explore Japan →</a></div>
+    </article>
+  </div>
+</section>
+
+<section class="section container" id="shop">
+  <div class="section-head"><div><div class="eyebrow">Find your vibe</div><h2>Explore the collection</h2></div><a class="muted" href="#">View all →</a></div>
+  <div class="collections">
+    <a class="collection" id="japan" href="#"><span>Japan</span><div class="illus">⛩️</div></a>
+    <a class="collection" id="korea" href="#"><span>Korea</span><div class="illus">🌸</div></a>
+    <a class="collection" id="home" href="#"><span>Home & Living</span><div class="illus">🏠</div></a>
+    <a class="collection" id="beauty" href="#"><span>Beauty & Self-Care</span><div class="illus">🧴</div></a>
+    <a class="collection" id="gifts" href="#"><span>Gifts</span><div class="illus">🎁</div></a>
+    <a class="collection" href="#"><span>Stationery</span><div class="illus">📓</div></a>
+  </div>
+</section>
+
+<section class="section container">
+  <div class="section-head"><div><div class="eyebrow">Little things we love</div><h2>New arrivals</h2></div><a class="muted" href="#">Shop all →</a></div>
+  <div class="products">
+    <article class="product"><span class="badge">New</span><button class="heart">♡</button><div class="product-img">🍵</div><div class="product-body"><h3>Cozy Ceramic Tea Cup</h3><div class="price">₹899</div></div></article>
+    <article class="product"><span class="badge">Japanese Selection</span><button class="heart">♡</button><div class="product-img">🌸</div><div class="product-body"><h3>Sakura Desk Charm</h3><div class="price">₹649</div></div></article>
+    <article class="product"><span class="badge">Gift Pick</span><button class="heart">♡</button><div class="product-img">🎁</div><div class="product-body"><h3>Kawaii Gift Box</h3><div class="price">₹1,299</div></div></article>
+    <article class="product"><span class="badge">Korean Style</span><button class="heart">♡</button><div class="product-img">🧴</div><div class="product-body"><h3>Soft Self-Care Set</h3><div class="price">₹999</div></div></article>
+  </div>
+</section>
+
+<section class="section container">
+  <div class="story"><div><div class="eyebrow">The Wabi Sabi Vibe</div><h2>Objects with a story.</h2><p>We look for things that make ordinary moments a little more interesting — a better desk, a quieter morning, a thoughtful gift.</p><a class="btn" href="#journal">Read the journal →</a></div><div class="teapot">🍵</div></div>
+</section>
+
+<section class="section container">
+  <div class="section-head"><div><div class="eyebrow">Why shop with us</div><h2>A calmer way to shop</h2></div></div>
+  <div class="trust">
+    <div class="trust-card"><div class="ico">🌱</div><h3>Thoughtfully Selected</h3><p class="muted">Products are reviewed before joining our collection.</p></div>
+    <div class="trust-card"><div class="ico">📦</div><h3>Transparent Shipping</h3><p class="muted">Clear delivery information before checkout.</p></div>
+    <div class="trust-card"><div class="ico">🛡️</div><h3>Secure Checkout</h3><p class="muted">Shop through trusted payment providers.</p></div>
+    <div class="trust-card"><div class="ico">🐱</div><h3>Friendly Support</h3><p class="muted">Need help? We're here for you.</p></div>
+  </div>
+</section>
+
+<section class="section container" id="journal">
+  <div class="newsletter"><div><div class="eyebrow">Stay curious</div><h2>A little Asia in your inbox.</h2><p>New finds, thoughtful gifts and stories from across Asia. No unnecessary noise.</p></div><form class="newsletter-form"><input type="email" placeholder="Your email address" aria-label="Email address"><button>Subscribe</button></form></div>
+</section>
+</main>
+
+<footer class="footer">
+ <div class="container footer-grid">
+  <div><div class="brand">wabisabi<span style="color:var(--terracotta)">vibes</span></div><p>Asian finds for a calmer you.</p></div>
+  <div><h3>Shop</h3><a href="#">New Arrivals</a><a href="#">Best Sellers</a><a href="#">Japan</a><a href="#">Korea</a><a href="#">Gifts</a></div>
+  <div><h3>Help</h3><a href="#">FAQ</a><a href="#">Contact</a><a href="#">Shipping</a><a href="#">Returns</a><a href="#">Order Tracking</a></div>
+  <div><h3>About</h3><a href="#">Our Story</a><a href="#">Journal</a><a href="#">Product Standards</a><a href="#">Instagram</a><a href="#">Pinterest</a></div>
+ </div>
+ <div class="container copyright">© 2026 Wabi Sabi Vibes. Operated by InnerVerge Media.</div>
+</footer>
+</body>
+</html>
