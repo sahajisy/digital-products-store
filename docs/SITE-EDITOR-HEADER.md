@@ -11,6 +11,11 @@ The site runs Twenty Twenty-Five, a block theme, so the header and footer are *t
 3. Repeat for **Footer** with the footer file.
 4. Open the site in a private window and check desktop, a phone, and keyboard Tab navigation.
 
+## One header and one footer on every page
+Every page template in Twenty Twenty-Five (pages, posts, archives, search, 404, and the WooCommerce shop, cart, checkout and account) includes the template parts named exactly **Header** and **Footer**. Two things make "same on every page" true:
+1. All published pages use the theme's standard template (not Elementor's "Full Width" or "Canvas" templates). Done 2026-10-04 for all 16 published pages.
+2. The footer markup must be saved in the part named **Footer**, not **Footer Columns** (a different, unused part; the default Twenty Twenty-Five footer will keep showing until the real Footer part is edited). Either paste `design/site-editor/footer-template-part.html` into **Footer**, or open **Footer** in the Code editor and replace its content with: `<!-- wp:template-part {"slug":"footer-columns"} /-->`
+
 ## What you get
 - Slim charcoal announcement bar. Click the text in the Editor to change it.
 - Sticky header, 76px, `#FFFAF5` with a `#EAD9CC` hairline, your horizontal logo (210px; 180px tablet; 160px phone).
