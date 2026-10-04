@@ -22,6 +22,13 @@ Not duplicated on purpose: cart, checkout, my account, shop, search, filters, co
 - `design/wabisabivibes-complete-site/`: the 24-page static prototype (home, shop, 6 collections, product, journal, about, contact, FAQ, policies, cart, checkout, account) with `ELEMENTOR-MAP.md`. It is a visual reference only. Cart, checkout and account are WooCommerce-native in the real site. Its sample products (and ₹ prices, and a "Best Seller" badge on demo items) must never be published. Its `assets/` are text/emoji placeholder SVGs, and `logo.svg`, `favicon.svg` and `hero.svg`, which the README lists, are **not in the zip**; the final logo and illustrations still need to be supplied.
 - **Decisions confirmed:** the brand is written **wabisabivibes** (one word, lowercase, "vibes" in terracotta); the legal business is **InnerVerge Media**; the domain stays wabisabivibe.store. Registered address, tax details and governing law still need your input.
 
+## Brand assets (final zip) and business details
+- `design/wabisabivibes-final-assets/`: logo, stacked logo, favicon, hero, decorative strip, sakura overlay. The original overlay has duplicate `r` attributes (invalid XML); a corrected copy is included and the original is kept as `*.ORIGINAL-invalid.svg`.
+- Uploaded to the Media Library (WordPress blocks plain SVG uploads here, so they went through the SVG-icon uploader): logo 159, stacked logo 160, favicon 161, hero 162, fixed sakura overlay 163. The hero is set as the background of the homepage draft's hero card. The logo and favicon are not yet applied (go-live step: header, Site Identity favicon).
+- The decorative strip is a labelled sheet and was not uploaded.
+- Business details from the GST certificate (trade name InnerVerge Media, GSTIN, registered address) are filled into Terms, Privacy, Contact and the About draft. The proprietor's name appears only in Terms. The certificate PDF itself is deliberately **not** stored in this repo.
+- Still open: governing law and jurisdiction wording, VAT/IOSS and customs wording, and an export/IEC check with an accountant (a GST registration alone does not cover selling to the EU).
+
 ## Not built: needs you (or a decision)
 1. **Theme.** The site runs Twenty Twenty-Five. A lightweight WooCommerce theme (Hello Elementor, Astra or Kadence) is better for the sticky header, product-page layout and speed. Install it, then tell me.
 2. **Sticky header, parallax, Elementor product/loop widgets** need Elementor Pro (not installed). Without it: static header, no parallax (also better for Core Web Vitals).
