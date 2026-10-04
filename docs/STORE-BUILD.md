@@ -31,6 +31,9 @@ Homepage product rows (Best Sellers, Japan, Korea, New arrivals, Gifts) are **hi
 Not done: sticky header and mobile hamburger menu (need Elementor Pro or the lightweight theme), wishlist icon (needs a plugin), working search box, newsletter form, social links (no profile URLs yet), 301 redirects from old URLs (`/the-makers/`).
 Post-launch checks: page speed is graded B; add page caching (LiteSpeed Cache is installed, enable its page cache) and consider a persistent object cache.
 
+## Japan wording (updated after the sourcing plan)
+The Japan collection page (144), the Japan section of the home page (139) and the FAQ answer "Are all products made in Japan?" (156) now say that **Japan means made in Japan**. Items that are only inspired by Japanese design are filed under their real origin. About (150) already said this. The "Japan" menu and footer links stay as labels. Rule when importing: put a product in the Japan category only if the supplier documents Japanese origin.
+
 ## Brand assets (final zip) and business details
 - `design/wabisabivibes-final-assets/`: logo, stacked logo, favicon, hero, decorative strip, sakura overlay. The original overlay has duplicate `r` attributes (invalid XML); a corrected copy is included and the original is kept as `*.ORIGINAL-invalid.svg`.
 - Uploaded to the Media Library (WordPress blocks plain SVG uploads here, so they went through the SVG-icon uploader): logo 159, stacked logo 160, favicon 161, hero 162, fixed sakura overlay 163. The hero is set as the background of the homepage draft's hero card. The logo and favicon are not yet applied (go-live step: header, Site Identity favicon).
