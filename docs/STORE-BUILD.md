@@ -57,6 +57,8 @@ Post-launch checks: page speed is graded B; add page caching (LiteSpeed Cache is
 - EU/Italy: VAT and import duties, 14-day withdrawal right, legal guarantee, GDPR/cookie consent, General Product Safety Regulation responsible person, and whether to offer Italian pages. Get these reviewed.
 
 ## Product import rules (AliNext / CJdropshipping / DSers)
+Supplier strategy (CJdropshipping with an Italy/EU warehouse plus a Japan wholesale partner for authentic items) is in `SOURCING-PLAN.md`. Do not sell licensed characters, and file each item under its true country of origin.
+
 - Keep supplier SKU, variants, images, cost, stock, weight and dimensions in the product record; never expose supplier names or links on the front end.
 - Rewrite every title and description. Remove supplier names, contact details, machine-translated text, CJK text and unverifiable claims.
 - Fill the product details: material, dimensions, weight, colour, country of origin, what's included. Add real processing and delivery times from the supplier.

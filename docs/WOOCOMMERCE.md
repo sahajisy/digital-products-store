@@ -15,6 +15,8 @@ Customer ─ WooCommerce checkout (card / PayPal) ─▶ order status "processin
  Any workflow failing  ─▶ 04 Error Alert ─▶ Telegram
 ```
 
+> Supplier plan: see `SOURCING-PLAN.md`. It adds CJdropshipping (EU warehouse) as the main dropship source and a Japan wholesale partner for held stock. The AliNext steps below still apply if you import from AliExpress; keep one importer active.
+
 ## 1. Plugins (already installed on the site)
 Keep **one** importer. Recommended: AliNext. Deactivate and delete the others (Syncee, Importify, Product Sync for WooCommerce, Dropshipping XML) so product imports and price/stock syncs do not collide. Also keep: WooCommerce, WooCommerce Stripe Gateway, Advanced Shipment Tracking. Optional: Google for WooCommerce. Update the plugins that show updates.
 
