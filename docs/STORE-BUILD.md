@@ -32,7 +32,7 @@ Not done: sticky header and mobile hamburger menu (need Elementor Pro or the lig
 Post-launch checks: page speed is graded B; add page caching (LiteSpeed Cache is installed, enable its page cache) and consider a persistent object cache.
 
 ## Japan wording (updated after the sourcing plan)
-The Japan collection page (144), the Japan section of the home page (139) and the FAQ answer "Are all products made in Japan?" (156) now say that **Japan means made in Japan**. Items that are only inspired by Japanese design are filed under their real origin. About (150) already said this. The "Japan" menu and footer links stay as labels. Rule when importing: put a product in the Japan category only if the supplier documents Japanese origin.
+The Japan collection page (144), the Japan section of the home page (139) and the FAQ answer "Are all products made in Japan?" (156) now say that **Japan means made in Japan**. Items that are only inspired by Japanese design are filed under their real origin. About (150) already said this. The "Japan" menu and footer links stay as labels. Rule when importing: put a product in the Japan category only if the supplier documents Japanese origin. Items that are only inspired by Japanese design get the product tag **Japanese-inspired** (term 52, archive `/product-tag/japanese-inspired/`) plus their real origin category (for example China). Never give one product both the Japan category and this tag.
 
 ## Brand assets (final zip) and business details
 - `design/wabisabivibes-final-assets/`: logo, stacked logo, favicon, hero, decorative strip, sakura overlay. The original overlay has duplicate `r` attributes (invalid XML); a corrected copy is included and the original is kept as `*.ORIGINAL-invalid.svg`.
