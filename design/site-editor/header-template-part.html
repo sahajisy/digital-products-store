@@ -1,0 +1,116 @@
+<!-- wp:html -->
+<style>
+/* ===== wabisabivibes header (Site Editor template part: Header) ===== */
+header.wp-block-template-part{position:sticky;top:0;z-index:50}
+.admin-bar header.wp-block-template-part{top:32px}
+.wsv-announce p{margin:0;letter-spacing:.01em}
+.wsv-bar{background:#FFFAF5;border-bottom:1px solid #EAD9CC;padding:0 32px;min-height:76px;gap:24px}
+.wsv-logo{margin:0}
+.wsv-logo img{width:210px;height:auto;display:block}
+.wsv-nav{flex:1}
+.wsv-nav .wp-block-navigation-item__content{font:700 14px/1.2 Inter,system-ui,-apple-system,"Segoe UI",sans-serif;color:#2E2A26;text-decoration:none;padding:9px 11px;border-radius:999px;transition:color .18s ease,background-color .18s ease}
+.wsv-nav .wp-block-navigation-item__content:hover,.wsv-nav .wp-block-navigation-item__content[aria-current]{color:#C45B44}
+.wsv-nav .wsv-top>.wp-block-navigation-item__content[aria-current]::before{content:"\273F";color:#F7B8B8;margin-right:5px}
+.wsv-nav .wp-block-navigation__submenu-container{background:#FFFAF5!important;color:#2E2A26!important;border:1px solid #EAD9CC!important;border-radius:16px;box-shadow:0 10px 30px rgba(46,42,38,.08);padding:8px!important;min-width:220px}
+.wsv-nav .wp-block-navigation__submenu-container .wp-block-navigation-item__content{border-radius:10px;padding:9px 12px;font-weight:600}
+.wsv-nav .wp-block-navigation__submenu-container .wp-block-navigation-item__content:hover{background:#FDECEC;color:#C45B44}
+.wsv-nav .wp-block-navigation__submenu-container::after{content:"\273F";position:absolute;right:14px;top:-11px;color:#F7B8B8;font-size:15px;line-height:1;background:#FFFAF5;padding:0 3px;border-radius:50%}
+.wsv-actions{gap:4px;flex-wrap:nowrap}
+.wsv-search .wp-block-search__button,.wsv-cart .wc-block-mini-cart__button,.wsv-account a{color:#2E2A26;background:transparent;border:0;border-radius:50%;padding:8px;transition:background-color .18s ease}
+.wsv-search .wp-block-search__button:hover,.wsv-cart .wc-block-mini-cart__button:hover,.wsv-account a:hover{background:#FDECEC}
+.wsv-cart .wc-block-mini-cart__badge{background:#C45B44;color:#fff}
+.wsv-bar :focus-visible{outline:2px solid #2E2A26;outline-offset:2px;border-radius:8px}
+.wsv-mobile-only{display:none}
+.wp-block-navigation__responsive-container.is-menu-open .wsv-mobile-only{display:block}
+.wsv-nav .wp-block-navigation__responsive-container.is-menu-open{background:#FFFAF5;padding:24px}
+.wsv-nav .is-menu-open .wsv-top>.wp-block-navigation-item__content{font-size:18px}
+.wsv-nav .is-menu-open .wp-block-navigation-item__content:hover{background:#FDECEC}
+.wsv-nav .is-menu-open .wp-block-navigation-submenu__toggle[aria-expanded="false"]~.wp-block-navigation__submenu-container{display:none!important}
+.wsv-nav .is-menu-open .wsv-mobile-only>.wp-block-navigation-item__content{background:#C45B44;color:#fff;border-radius:999px;padding:11px 18px;display:inline-block;margin-top:6px}
+@media (max-width:1023px){
+ .wsv-bar{display:grid!important;grid-template-columns:1fr auto 1fr;align-items:center;padding:0 16px;min-height:68px}
+ .wsv-nav{order:-1;justify-self:start;flex:none}
+ .wsv-logo{justify-self:center}
+ .wsv-logo img{width:180px}
+ .wsv-actions{justify-self:end}
+ .wsv-account{display:none}
+ .wsv-nav .wp-block-navigation__responsive-container:not(.is-menu-open){display:none!important}
+ .wsv-nav .wp-block-navigation__responsive-container-open:not(.always-shown){display:flex!important}
+}
+@media (max-width:600px){.wsv-logo img{width:160px}}
+/* Elementor pages inside Twenty Twenty-Five: no duplicate title, full width */
+body.elementor-page .wp-block-post-title,body.elementor-page .wp-block-post-featured-image{display:none}
+body.elementor-page main.wp-block-group{margin-top:0!important}
+body.elementor-page main.wp-block-group>.wp-block-group{padding-top:0!important;padding-bottom:0!important}
+body.elementor-page .wp-block-post-content>.elementor{max-width:none!important;width:100%}
+</style>
+<!-- /wp:html -->
+
+<!-- wp:group {"className":"wsv-announce","style":{"color":{"text":"#FFF8F3","background":"#2E2A26"},"spacing":{"padding":{"top":"7px","bottom":"7px","left":"16px","right":"16px"}}},"layout":{"type":"constrained"}} -->
+<div class="wp-block-group wsv-announce has-text-color has-background" style="color:#FFF8F3;background-color:#2E2A26;padding-top:7px;padding-right:16px;padding-bottom:7px;padding-left:16px"><!-- wp:paragraph {"align":"center","style":{"typography":{"fontSize":"13px"}}} -->
+<p class="has-text-align-center" style="font-size:13px">🌸 Thoughtfully selected Asian finds • Simple things, happier days</p>
+<!-- /wp:paragraph --></div>
+<!-- /wp:group -->
+
+<!-- wp:group {"className":"wsv-bar","layout":{"type":"flex","flexWrap":"nowrap","justifyContent":"space-between","verticalAlignment":"center"}} -->
+<div class="wp-block-group wsv-bar is-content-justification-space-between is-nowrap is-layout-flex wp-block-group-is-layout-flex"><!-- wp:image {"width":"210px","sizeSlug":"full","linkDestination":"custom","className":"wsv-logo"} -->
+<figure class="wp-block-image size-full is-resized wsv-logo"><a href="/"><img src="https://wabisabivibe.store/wp-content/uploads/2026/10/wabisabivibes-logo-horizontal.svg" alt="wabisabivibes: Asian finds for a calmer you" style="width:210px"/></a></figure>
+<!-- /wp:image -->
+
+<!-- wp:navigation {"ariaLabel":"Main menu","overlayMenu":"mobile","icon":"menu","showSubmenuIcon":true,"openSubmenusOnClick":false,"className":"wsv-nav","customOverlayBackgroundColor":"#FFFAF5","customOverlayTextColor":"#2E2A26","layout":{"type":"flex","justifyContent":"center","orientation":"horizontal","flexWrap":"wrap"}} -->
+<!-- wp:navigation-submenu {"label":"Shop","url":"/shop/","kind":"custom","isTopLevelItem":true,"className":"wsv-top"} -->
+<!-- wp:navigation-link {"label":"New Arrivals","url":"/shop/?orderby=date","kind":"custom","isTopLevelLink":false} /-->
+<!-- wp:navigation-link {"label":"Best Sellers","url":"/shop/?orderby=popularity","kind":"custom","isTopLevelLink":false} /-->
+<!-- wp:navigation-link {"label":"All Products","url":"/shop/","kind":"custom","isTopLevelLink":false} /-->
+<!-- /wp:navigation-submenu -->
+<!-- wp:navigation-submenu {"label":"Japan","url":"/japan/","kind":"custom","isTopLevelItem":true,"className":"wsv-top"} -->
+<!-- wp:navigation-link {"label":"Japanese Lifestyle","url":"/japan/","kind":"custom","isTopLevelLink":false} /-->
+<!-- wp:navigation-link {"label":"Home & Living","url":"/?post_type=product&product_cat=japan%2Bhome-living","kind":"custom","isTopLevelLink":false} /-->
+<!-- wp:navigation-link {"label":"Stationery","url":"/?post_type=product&product_cat=japan%2Bdesk-stationery","kind":"custom","isTopLevelLink":false} /-->
+<!-- wp:navigation-link {"label":"Tea & Drinkware","url":"/?post_type=product&product_cat=japan%2Btea-drinkware","kind":"custom","isTopLevelLink":false} /-->
+<!-- wp:navigation-link {"label":"Gifts","url":"/?post_type=product&product_cat=japan%2Bgifts","kind":"custom","isTopLevelLink":false} /-->
+<!-- /wp:navigation-submenu -->
+<!-- wp:navigation-submenu {"label":"Korea","url":"/korea/","kind":"custom","isTopLevelItem":true,"className":"wsv-top"} -->
+<!-- wp:navigation-link {"label":"Korean Lifestyle","url":"/korea/","kind":"custom","isTopLevelLink":false} /-->
+<!-- wp:navigation-link {"label":"Beauty","url":"/?post_type=product&product_cat=korea%2Bbeauty-self-care","kind":"custom","isTopLevelLink":false} /-->
+<!-- wp:navigation-link {"label":"Fashion & Accessories","url":"/?post_type=product&product_cat=korea%2Bfashion-accessories","kind":"custom","isTopLevelLink":false} /-->
+<!-- wp:navigation-link {"label":"Gifts","url":"/?post_type=product&product_cat=korea%2Bgifts","kind":"custom","isTopLevelLink":false} /-->
+<!-- /wp:navigation-submenu -->
+<!-- wp:navigation-submenu {"label":"Home & Living","url":"/product-category/home-living/","kind":"custom","isTopLevelItem":true,"className":"wsv-top"} -->
+<!-- wp:navigation-link {"label":"Home Décor","url":"/product-category/home-decor/","kind":"custom","isTopLevelLink":false} /-->
+<!-- wp:navigation-link {"label":"Kitchen & Dining","url":"/product-category/kitchen-dining/","kind":"custom","isTopLevelLink":false} /-->
+<!-- wp:navigation-link {"label":"Desk & Workspace","url":"/product-category/desk-stationery/","kind":"custom","isTopLevelLink":false} /-->
+<!-- wp:navigation-link {"label":"Cozy Living","url":"/product-category/cozy-living/","kind":"custom","isTopLevelLink":false} /-->
+<!-- /wp:navigation-submenu -->
+<!-- wp:navigation-submenu {"label":"Beauty & Self-Care","url":"/product-category/beauty-self-care/","kind":"custom","isTopLevelItem":true,"className":"wsv-top"} -->
+<!-- wp:navigation-link {"label":"Beauty Accessories","url":"/product-category/beauty-accessories/","kind":"custom","isTopLevelLink":false} /-->
+<!-- wp:navigation-link {"label":"Self-Care","url":"/product-category/self-care/","kind":"custom","isTopLevelLink":false} /-->
+<!-- wp:navigation-link {"label":"Wellness","url":"/product-category/wellness/","kind":"custom","isTopLevelLink":false} /-->
+<!-- /wp:navigation-submenu -->
+<!-- wp:navigation-submenu {"label":"Gifts","url":"/product-category/gifts/","kind":"custom","isTopLevelItem":true,"className":"wsv-top"} -->
+<!-- wp:navigation-link {"label":"Gifts for Her","url":"/product-category/gifts-for-her/","kind":"custom","isTopLevelLink":false} /-->
+<!-- wp:navigation-link {"label":"Gifts for Him","url":"/product-category/gifts-for-him/","kind":"custom","isTopLevelLink":false} /-->
+<!-- wp:navigation-link {"label":"Cute Gifts","url":"/product-category/cute-gifts/","kind":"custom","isTopLevelLink":false} /-->
+<!-- wp:navigation-link {"label":"Japanese Gifts","url":"/?post_type=product&product_cat=japan%2Bgifts","kind":"custom","isTopLevelLink":false} /-->
+<!-- wp:navigation-link {"label":"Korean Gifts","url":"/?post_type=product&product_cat=korea%2Bgifts","kind":"custom","isTopLevelLink":false} /-->
+<!-- /wp:navigation-submenu -->
+<!-- wp:navigation-submenu {"label":"Journal","url":"/journal/","kind":"custom","isTopLevelItem":true,"className":"wsv-top"} -->
+<!-- wp:navigation-link {"label":"Latest Articles","url":"/journal/","kind":"custom","isTopLevelLink":false} /-->
+<!-- wp:navigation-link {"label":"Japan","url":"/category/japan/","kind":"custom","isTopLevelLink":false} /-->
+<!-- wp:navigation-link {"label":"Korea","url":"/category/korea/","kind":"custom","isTopLevelLink":false} /-->
+<!-- wp:navigation-link {"label":"Lifestyle","url":"/category/lifestyle/","kind":"custom","isTopLevelLink":false} /-->
+<!-- wp:navigation-link {"label":"Gift Guides","url":"/category/gift-guides/","kind":"custom","isTopLevelLink":false} /-->
+<!-- /wp:navigation-submenu -->
+<!-- wp:navigation-link {"label":"Account","url":"/my-account/","kind":"custom","className":"wsv-mobile-only"} /-->
+<!-- wp:navigation-link {"label":"Order Tracking","url":"/my-account/orders/","kind":"custom","className":"wsv-mobile-only"} /-->
+<!-- wp:navigation-link {"label":"Contact","url":"/contact/","kind":"custom","className":"wsv-mobile-only"} /-->
+<!-- /wp:navigation -->
+
+<!-- wp:group {"className":"wsv-actions","layout":{"type":"flex","flexWrap":"nowrap","verticalAlignment":"center"}} -->
+<div class="wp-block-group wsv-actions is-nowrap is-layout-flex wp-block-group-is-layout-flex"><!-- wp:search {"label":"Search","showLabel":false,"placeholder":"Search products","buttonText":"Search","buttonPosition":"button-only","buttonUseIcon":true,"query":{"post_type":"product"},"className":"wsv-search"} /-->
+
+<!-- wp:woocommerce/customer-account {"displayStyle":"icon_only","iconStyle":"line","iconClass":"wc-block-customer-account__account-icon","className":"wsv-account"} /-->
+
+<!-- wp:woocommerce/mini-cart {"hasHiddenPrice":true,"productCountVisibility":"greater_than_zero","className":"wsv-cart"} /--></div>
+<!-- /wp:group --></div>
+<!-- /wp:group -->
