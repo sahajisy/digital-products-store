@@ -1,4 +1,6 @@
-# Setup: start to finish
+# Setup: start to finish (digital-download variant)
+
+> Running wabisabivibe.store on WordPress + WooCommerce + AliNext? Use [WOOCOMMERCE.md](WOOCOMMERCE.md) instead. This guide covers the static site with Stripe Payment Links.
 
 Order matters; each step depends on the one before.
 

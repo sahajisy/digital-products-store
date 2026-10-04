@@ -16,6 +16,9 @@
   Customer ─ chat widget ─▶ 02 AI Sales Agent (n8n webhook) ─▶ Claude + get_catalog tool + per-session memory
 ```
 
+## Live deployment
+`wabisabivibe.store` runs WordPress + WooCommerce + AliNext; see [WOOCOMMERCE.md](WOOCOMMERCE.md). Workflow 05 replaces 01/03 there, 02 reads the WooCommerce Store API, 04 alerts on failures. The diagram above is the static digital-download variant.
+
 ## Design decisions
 - **Sheet is the single source of truth.** The public `products.json` is generated from it and never contains `supplier_download_url`; `scripts/validate.mjs` fails CI if that leaks.
 - **Idempotent fulfilment.** Stripe may redeliver events; orders are keyed by Checkout `session_id` and skipped if already logged.
