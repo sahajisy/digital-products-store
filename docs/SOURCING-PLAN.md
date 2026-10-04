@@ -82,6 +82,31 @@ Draft, edit before sending:
 > support@wabisabivibe.store
 > https://wabisabivibe.store
 
+## Notes from the AutoDS WooCommerce video
+Source: a US-focused YouTube tutorial by Mario (AutoDS) that partly promotes AutoDS; prices in it are unverified. We already run WooCommerce, so only the reusable parts are kept here.
+
+**Product check before importing** (answer yes to most):
+- Do you know and like the product, and is it hard to find in stores?
+- Is the price hard for customers to guess, and is it safe to sell and ad-policy friendly?
+- Does it solve a problem or have a clear "wow"?
+- Is there enough margin? The video wants more than about US$30 at 2 to 2.5 times cost. Kawaii stationery is cheap, so sell **bundles and gift sets**.
+- Order a sample first for anything electronic or pricey.
+
+**Fulfilment habits**
+- Use tracked shipping only.
+- Turn on supplier stock and price monitoring.
+- Keep a prepaid CJ balance so orders do not stall.
+
+**WooCommerce settings worth copying**
+- Set the default customer location to geolocate (helps the INR/EUR currency switcher choose a currency).
+- Create shipping zones per market (see `INDIA-LAUNCH.md`).
+
+**What we do differently**
+- The video suggests hiding supplier origin by converting tracking numbers. We do not: the store tells customers where items ship from, which also reduces chargebacks.
+- Its profit example (about US$447,000 from one ad) and the "no product is oversaturated" claim are guesses; do not plan around them.
+- Its payment and sales-tax setup is US-based. Ours is INR via Razorpay, EUR via Stripe, GST for India and VAT/IOSS for the EU.
+- It confirms that CJ integrates with WooCommerce, which fits the plugin question; see the chat notes about the official plugin being outdated.
+
 ## Open questions (from the notes, plus ours)
 - Which payment gateway can take euros for an Indian business? (Stripe, PayPal, Razorpay and others each have eligibility rules; check before committing.)
 - Which replacement Japan supplier accepts small orders and ships to Italy (or to you in India)?
