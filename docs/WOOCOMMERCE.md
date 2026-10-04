@@ -24,22 +24,22 @@ WooCommerce → Settings:
 - **Payments**: Stripe (connect your account; test mode first), Cash on delivery only if you will honour it (with AliExpress sourcing, COD means you pay the supplier before you are paid. Many dropshippers skip it or cap it).
 - **Shipping**: zone India, a flat or free rate that covers your real AliExpress shipping cost.
 - **Accounts & Privacy**: allow guest checkout.
-- Advanced → REST API: create a key (Read) for n8n (step 4).
 
 ## 3. AliNext
 1. Open AliNext in WordPress admin and follow its setup (it connects through a browser extension to your AliExpress login).
 2. Import products. Edit titles and descriptions to match the Japandi brand; do not leave AliExpress copy or images with watermarks.
-3. Set pricing rules so price = AliExpress cost + shipping + Stripe fees (~2-3%) + your margin. Check the margin on one real product by hand.
+3. Set pricing rules so price = AliExpress cost + shipping + payment gateway fees (~2-3%) + your margin. Check the margin on one real product by hand.
 4. Place a real test order to yourself before launch to measure the true delivery time, and put that number in the Shipping & Delivery page.
 5. This workflow assumes you **place the AliExpress order manually** from the Telegram alert. Check which automation features your AliNext version includes (some are paid-only) before relying on auto-ordering.
 
 ## 4. n8n
 Import `n8n/workflows/05-woocommerce-dropship-orders.json` and `04-error-alert.json`, then:
-1. Credentials: WooCommerce API (URL `https://wabisabivibe.store`, the key from step 2), Google Sheets, Telegram.
+1. Credentials: Google Sheets and Telegram. Workflow 05 does **not** need WooCommerce API keys; WooCommerce posts each order to an n8n webhook.
 2. Replace `REPLACE_WITH_SHEET_ID` and `REPLACE_WITH_TELEGRAM_CHAT_ID`. Use the `Orders` tab from `n8n/sheets/Orders.csv`. Workflow 05 stores `woo-<order id>` in the `session_id` column.
-3. Set workflow 05's *Error workflow* to *04 - Error Alert*, then activate both. n8n registers the webhook in WooCommerce when you activate.
-4. Place a test order. You should get one Telegram alert and one Orders row; editing the same order again must **not** alert twice.
-5. Workflow 02 (chat): set the Anthropic credential and `support@wabisabivibe.store` to your real address, activate, and add the production webhook URL to `site/config.js` if you embed the widget. The agent reads the catalog from `https://wabisabivibe.store/wp-json/wc/store/v1/products`.
+3. In workflow 05, open the *Woo Order Webhook* node and replace `REPLACE_WITH_RANDOM_STRING` in the path with a long random string (for example 32 random characters). The path is the shared secret, so keep it private. Set workflow 05's *Error workflow* to *04 - Error Alert*, then **activate** both.
+4. In WooCommerce → Settings → Advanced → **Webhooks** → Add webhook: Name `n8n orders`, Status **Active**, Topic **Order updated**, Delivery URL = the node's **Production URL** (`https://<your-n8n>/webhook/woo-orders-<your string>`), Secret = any value, API version WP REST API Integration v3. Save. WooCommerce sends a ping that workflow 05 ignores; the webhook's "Logs" should then show 200 responses.
+5. Place a test order. You should get one Telegram alert and one Orders row; editing the same order again must **not** alert twice.
+6. Workflow 02 (chat): set the Anthropic credential, activate, and add the production webhook URL to `site/config.js` if you embed the widget. The agent reads the catalog from `https://wabisabivibe.store/wp-json/wc/store/v1/products`.
 
 ## 5. Before you go live
 - [ ] Fill every `[PLACEHOLDER]` on Home, About, Shipping, Returns, Terms, Privacy (support email, city, dates, COD cap, return window). Policies must match what you really do; have them reviewed.
@@ -51,4 +51,5 @@ Import `n8n/workflows/05-woocommerce-dropship-orders.json` and `04-error-alert.j
 ## Known limits
 - Fulfilment on AliExpress is manual; Telegram tells you what to order and where to ship.
 - Refunds are manual (WooCommerce → order → Refund).
+- The webhook is protected only by its secret path (no signature check), so a leaked URL could trigger fake alerts and Orders rows; regenerate the path if it leaks. It cannot move money or change the store.
 - `order.updated` fires several times per order; the Orders sheet is what prevents duplicate alerts, so keep the tab and `session_id` column intact.

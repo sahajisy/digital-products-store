@@ -3,27 +3,24 @@
   "nodes": [
     {
       "parameters": {
-        "event": "order.updated"
+        "httpMethod": "POST",
+        "path": "woo-orders-REPLACE_WITH_RANDOM_STRING",
+        "responseMode": "onReceived",
+        "options": {}
       },
       "id": "e5000000-0000-4000-8000-000000000001",
-      "name": "WooCommerce Order Updated",
-      "type": "n8n-nodes-base.wooCommerceTrigger",
-      "typeVersion": 1,
+      "name": "Woo Order Webhook",
+      "type": "n8n-nodes-base.webhook",
+      "typeVersion": 2,
       "position": [
         0,
         300
       ],
-      "webhookId": "store-woo-orders",
-      "credentials": {
-        "wooCommerceApi": {
-          "id": "REPLACE_ME",
-          "name": "WooCommerce account"
-        }
-      }
+      "webhookId": "store-woo-orders"
     },
     {
       "parameters": {
-        "jsCode": "const o = $input.first().json;\nconst b = o.billing || {};\nconst s = (o.shipping && o.shipping.address_1) ? o.shipping : b;\nconst lines = o.line_items || [];\nconst items = lines.map((i) => `${i.quantity} x ${i.name}${i.sku ? ' [' + i.sku + ']' : ''}`);\nconst shipTo = [`${s.first_name || ''} ${s.last_name || ''}`.trim(), s.address_1, s.address_2, s.city, s.state, s.postcode, s.country]\n  .filter((x) => x && String(x).trim()).join(', ');\nreturn [{ json: {\n  order_key: 'woo-' + o.id,\n  id: o.id,\n  status: o.status,\n  email: (b.email || '').trim().toLowerCase(),\n  customer: `${b.first_name || ''} ${b.last_name || ''}`.trim(),\n  phone: b.phone || s.phone || '',\n  total: o.total,\n  currency: o.currency,\n  payment: o.payment_method_title || o.payment_method || '',\n  cod: o.payment_method === 'cod',\n  items: items.join('\\n'),\n  skus: lines.map((i) => i.sku || i.product_id).join(', '),\n  ship_to: shipTo,\n  admin_url: `https://wabisabivibe.store/wp-admin/admin.php?page=wc-orders&action=edit&id=${o.id}`\n} }];"
+        "jsCode": "// WooCommerce posts the order as the JSON body. The ping sent when the webhook is created has no order id, so it is ignored.\nconst o = $input.first().json.body || {};\nif (!o.id) return [];\nconst b = o.billing || {};\nconst s = (o.shipping && o.shipping.address_1) ? o.shipping : b;\nconst lines = o.line_items || [];\nconst items = lines.map((i) => `${i.quantity} x ${i.name}${i.sku ? ' [' + i.sku + ']' : ''}`);\nconst shipTo = [`${s.first_name || ''} ${s.last_name || ''}`.trim(), s.address_1, s.address_2, s.city, s.state, s.postcode, s.country]\n  .filter((x) => x && String(x).trim()).join(', ');\nreturn [{ json: {\n  order_key: 'woo-' + o.id,\n  id: o.id,\n  status: o.status,\n  email: (b.email || '').trim().toLowerCase(),\n  customer: `${b.first_name || ''} ${b.last_name || ''}`.trim(),\n  phone: b.phone || s.phone || '',\n  total: o.total,\n  currency: o.currency,\n  payment: o.payment_method_title || o.payment_method || '',\n  cod: o.payment_method === 'cod',\n  items: items.join('\\n'),\n  skus: lines.map((i) => i.sku || i.product_id).join(', '),\n  ship_to: shipTo,\n  admin_url: `https://wabisabivibe.store/wp-admin/admin.php?page=wc-orders&action=edit&id=${o.id}`\n} }];"
       },
       "id": "e5000000-0000-4000-8000-000000000002",
       "name": "Normalize Order",
@@ -212,17 +209,6 @@
     }
   ],
   "connections": {
-    "WooCommerce Order Updated": {
-      "main": [
-        [
-          {
-            "node": "Normalize Order",
-            "type": "main",
-            "index": 0
-          }
-        ]
-      ]
-    },
     "Normalize Order": {
       "main": [
         [
@@ -274,6 +260,17 @@
         [
           {
             "node": "Log Order",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Woo Order Webhook": {
+      "main": [
+        [
+          {
+            "node": "Normalize Order",
             "type": "main",
             "index": 0
           }
