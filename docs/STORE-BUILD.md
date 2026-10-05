@@ -70,6 +70,10 @@ Supplier strategy (CJdropshipping with an Italy/EU warehouse plus a Japan wholes
 - Fill the product details: material, dimensions, weight, colour, country of origin, what's included. Add real processing and delivery times from the supplier.
 - Launch with 30-50 products, passed through **The Wabi Sabi Standard** (`/standards/`).
 
+## Supplier privacy vs honesty
+- **Private:** supplier names, supplier links and supplier SKUs never appear on the storefront, product pages, emails or invoices. Keep them in the product record only.
+- **Always shown:** the real country of origin and the ship-from location on every product page, realistic delivery times, and the carrier's genuine tracking number and link (Advanced Shipment Tracking). Do not convert or re-label tracking numbers, and do not hide where a parcel ships from. This keeps customers informed about delivery and customs, and meets origin and seller-disclosure expectations in India and the EU.
+
 ## Pricing
 `price = (supplier cost + shipping + returns allowance + other costs) / (1 − payment fee − ad cost − target margin)`
 
