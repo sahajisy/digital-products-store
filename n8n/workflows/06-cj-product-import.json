@@ -158,7 +158,7 @@
     {
       "parameters": {
         "chatId": "REPLACE_WITH_TELEGRAM_CHAT_ID",
-        "text": "=⛔ CJ product skipped (licensed character or brand): {{ $json.source_title }}\nCJ id: {{ $json.pid }}\nReason: {{ $json.flags.join('; ') }}\nNo draft was created.",
+        "text": "=⛔ CJ product skipped (licensed character or brand): {{ String($json.source_title).replace(/[_*`\\[\\]<>]/g, ' ') }}\nCJ id: {{ $json.pid }}\nReason: {{ $json.flags.join('; ').replace(/[_*`\\[\\]<>]/g, ' ') }}\nNo draft was created.",
         "additionalFields": {
           "appendAttribution": false
         }
@@ -274,7 +274,7 @@
     {
       "parameters": {
         "chatId": "REPLACE_WITH_TELEGRAM_CHAT_ID",
-        "text": "=📝 Draft ready to review: {{ $('Parse Rewrite').item.json.title }}\nPrice: ₹{{ $('Parse Rewrite').item.json.price_inr }} (CJ cost ${{ $('Parse Rewrite').item.json.cost_usd }})\nCheck before publishing: {{ $('Parse Rewrite').item.json.flags.length ? $('Parse Rewrite').item.json.flags.join('; ') : 'nothing flagged' }}\nEdit: https://wabisabivibe.store/wp-admin/post.php?post={{ $json.id }}&action=edit\nIt is a DRAFT. Check it against /standards/ and the real origin before you publish.",
+        "text": "=📝 Draft ready to review: {{ String($('Parse Rewrite').item.json.title).replace(/[_*`\\[\\]<>]/g, ' ') }}\nPrice: INR {{ $('Parse Rewrite').item.json.price_inr }} (CJ cost USD {{ $('Parse Rewrite').item.json.cost_usd }})\nCheck before publishing: {{ $('Parse Rewrite').item.json.flags.length ? $('Parse Rewrite').item.json.flags.join('; ').replace(/[_*`\\[\\]<>]/g, ' ') : 'nothing flagged' }}\nEdit: https://wabisabivibe.store/wp-admin/post.php?post={{ $json.id }}&action=edit\nIt is a DRAFT. Check it against /standards/ and the real origin before you publish.",
         "additionalFields": {
           "appendAttribution": false
         }
