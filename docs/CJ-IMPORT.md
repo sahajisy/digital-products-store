@@ -24,7 +24,7 @@ I could not open CJ's developer docs from the build environment, so the endpoint
 4. Import the file, link the credentials, and set *Error workflow* to `04 - Error Alert`.
 
 ## Each run
-1. Edit the **Settings** node: CJ product IDs (the long UUID at the end of a CJ product page URL), `type_category`, the real `origin_country`, `japanese_inspired`, today's `usd_to_inr` and the real CJ `shipping_inr` for that item. `usd_to_inr` must be set or the run stops; an unset shipping cost is flagged because the price is then wrong.
+1. Edit the **Settings** node: CJ product IDs (the long number after `-p-` at the end of a CJ product page URL, for example `1515650899379761152`; keep it in quotes), `type_category`, the real `origin_country`, `japanese_inspired`, today's `usd_to_inr` and the real CJ `shipping_inr` for that item. `usd_to_inr` must be set or the run stops; an unset shipping cost is flagged because the price is then wrong.
 2. Run it manually. Use one product at a time while testing.
 3. Open the draft from Telegram. Check the title, description, images, origin, price and the flags, then publish by hand.
 
