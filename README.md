@@ -9,6 +9,7 @@ A static storefront plus an n8n automation "agent" that runs a digital-products 
 | `n8n/workflows/02-ai-sales-agent.json` | Website chat → Claude agent that answers from the live catalog |
 | `n8n/workflows/03-catalog-sync.json` | Google Sheet → AI-written descriptions → publishes `site/products.json` |
 | `n8n/workflows/05-woocommerce-dropship-orders.json` | WooCommerce order → Telegram "fulfil on AliExpress" alert → log (live path for wabisabivibe.store) |
+| `n8n/workflows/06-cj-product-import.json` | Manual run: CJ product IDs → price + Claude rewrite → WooCommerce **draft** → Telegram "review me" (never auto-publishes) |
 | `n8n/workflows/04-error-alert.json` | Any workflow fails → Telegram alert (e.g. paid order whose email failed) |
 | `n8n/sheets/` | CSV templates for the Products and Orders sheet tabs |
 | `docs/SETUP.md` | End-to-end setup, go-live checklist, troubleshooting |
