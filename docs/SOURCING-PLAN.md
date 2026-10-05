@@ -41,6 +41,7 @@ Source: your research notes (Oct 2026), reconciled with the store as built. The 
 Candidates come from your own notes and are **unchecked**; confirm each is open and accepts a buyer in India or the EU before relying on it:
 - **NETSEA and Super Delivery**: Japanese wholesale marketplaces, mostly bulk and Japanese-language; check whether they accept overseas buyers and ship abroad.
 - **Orosy** (see the wholesale-portal guide in the sources) and **Faire**: wholesale marketplaces where Japanese stationery brands list; check each brand's minimum order and international shipping.
+- **Yunomi (yunomi.life)**: Japan-based seller of Japanese tea and teaware with a wholesale program (Lite and Pro membership; per search results the Pro fee is paid as store gift cards) and drop shipping on request via wholesale@yunomi.life. Mostly tea and teaware, not stationery. Tea is a food product (EU labelling, Indian food rules), so start with teaware. Enquiry sent on 2026-10-05; awaiting reply. Their page could not be opened from here, so all of this is from search snippets.
 - Any brand you like directly: many small Japanese stationery makers take wholesale enquiries by email.
 Until one of these works out, launch with the CJdropshipping items only and **do not use the Japan category** (it stays empty; keep it hidden from the menu and home page if you prefer an honest, uncluttered launch).
 
